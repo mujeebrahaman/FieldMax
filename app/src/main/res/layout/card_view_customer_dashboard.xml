@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:layout_height="wrap_content"
         android:src="@drawable/dashboard_icon_saleorder" />
 
@@ -14,8 +14,8 @@
         android:text="Sales Order"
         style="@style/DashBoardText"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
         android:layout_gravity="center"
         android:textColor="@color/textColorPrimary" />
 </LinearLayout>

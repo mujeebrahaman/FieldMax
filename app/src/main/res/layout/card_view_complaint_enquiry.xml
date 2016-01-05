@@ -13,7 +13,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/margin_200dp"
             android:hint="@string/enquiryText"
             android:background="@drawable/rectangular_box"
             android:layout_marginTop="@dimen/margin_10dp"

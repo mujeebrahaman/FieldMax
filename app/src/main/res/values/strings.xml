@@ -27,10 +27,13 @@
     <string name="foodExpense">Food Expense</string>
     <string name="mobileExpense">Mobile Expense</string>
     <string name="otherExpense">Other Expense</string>
+    <string name="expenseDescription">Write your other expense description details</string>
     <string name="totalExpenseText">Your Total Expense</string>
     <string name="totalExpenseButtonText">Get Total Expense</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="loginButton">LOGIN</string>
+
     <string name="splashText">FIELD  MAX</string>
     <string name="enquiryText">Write Yout Enquiry Here</string>
     <string name="orderDate">OrderDate -</string>

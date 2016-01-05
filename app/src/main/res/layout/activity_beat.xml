@@ -30,7 +30,7 @@
         <Spinner
             android:id="@+id/spinnerBeatDays"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="@dimen/margin_48dp"
             android:layout_weight="0.4"
             android:spinnerMode="dialog"
             android:textAlignment="center"
@@ -40,13 +40,13 @@
             </Spinner>
         <View
             android:layout_width="0dp"
-            android:layout_height="10dp"
+            android:layout_height="@dimen/margin_10dp"
             android:layout_weight="0.05"/>
 
         <Button
             android:id="@+id/getRoute"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="@dimen/margin_48dp"
             android:layout_weight="0.4"
             android:background="@color/ColorPrimary"
             android:text="@string/getRouteButton"
