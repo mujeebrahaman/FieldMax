@@ -37,4 +37,5 @@
     <color name="myNavigationColor">#000000</color>
     <color name="PrimaryColor">#007DB3</color>
     <color name="PrimaryDarkColor">#009DE0</color>
+    <color name="light_light_gray">#50d3d3d3</color>
 </resources>

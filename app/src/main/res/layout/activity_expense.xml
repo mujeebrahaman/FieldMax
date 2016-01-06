@@ -165,6 +165,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_10dp"
+            android:paddingLeft="@dimen/margin_10dp"
+            android:paddingRight="@dimen/margin_10dp"
             android:text="@string/totalExpenseButtonText"
             android:background="@color/PrimaryColor"
             android:textColor="@color/ColorPrimary"/>

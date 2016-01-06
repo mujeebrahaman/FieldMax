@@ -22,17 +22,19 @@ import java.util.ArrayList;
 public class CardViewPieChart extends CardView {
     private Context mContext;
     private PieChart mPieChart;
+
     public CardViewPieChart(Context context) {
         super(context);
-        this.mContext=context;
+        this.mContext = context;
         initView();
     }
+
     protected void initView() {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.card_view_piechart, this, true);
 
         //Pie Chart implementation
-        mPieChart = (PieChart)view.findViewById(R.id.pieChart);
+        mPieChart = (PieChart) view.findViewById(R.id.pieChart);
         mPieChart.setUsePercentValues(true);
         mPieChart.setDescription("Pedigree Pie");
         // enable hole and configure
@@ -44,6 +46,7 @@ public class CardViewPieChart extends CardView {
         //add data
         addData();
     }
+
     private void addData() {
         float[] yData = {5, 10, 15, 30, 40, 50};
         String[] xData = {"JAN", "FEB", "MAR", "APR", "MAY", "JUN"};

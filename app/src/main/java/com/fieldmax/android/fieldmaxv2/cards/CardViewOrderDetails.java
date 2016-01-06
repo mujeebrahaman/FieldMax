@@ -12,9 +12,10 @@ import com.fieldmax.android.fieldmaxv2.R;
  */
 public class CardViewOrderDetails extends CardView {
     private Context mContext;
+
     public CardViewOrderDetails(Context context) {
         super(context);
-        this.mContext=context;
+        this.mContext = context;
         initView();
     }
 
@@ -22,4 +23,4 @@ public class CardViewOrderDetails extends CardView {
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.card_view_order_details, this, true);
     }
-    }
+}

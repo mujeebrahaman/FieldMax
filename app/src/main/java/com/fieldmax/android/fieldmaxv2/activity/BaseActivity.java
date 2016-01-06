@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +31,7 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
     private SearchView searchView;
     private DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
-
+    Toolbar toolbar;
 
     @Override
     public void setContentView(int layoutResID) {
@@ -41,10 +40,12 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
         FrameLayout activityContainer = (FrameLayout) fullView.findViewById(R.id.activity_content);
         getLayoutInflater().inflate(layoutResID, activityContainer, true);
         super.setContentView(fullView);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#fffffff'>ActionBarTitle </font>"));
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_left_carat_selected);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_container);
@@ -66,10 +67,10 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
                         startActivity(intent);
                         return true;
 
-                        case R.id.expense:
+                    case R.id.expense:
                         Intent intent1 = new Intent(getApplicationContext(), ExpenseActivity.class);
-                            intent1.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                            intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent1);
                         return true;
 
@@ -91,7 +92,7 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
             }
         });
 
-        final ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.open_drawer, R.string.close_drawer) {
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -111,11 +112,10 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
 
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
 
 
     }
-
-
 
 
     @Override
@@ -127,8 +127,9 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
 
+
+        switch (item.getItemId()) {
             case R.id.action_searchAction:
                 searchItem = menu.findItem(R.id.action_searchAction);
                 searchView = (SearchView) searchItem.getActionView();
@@ -149,8 +150,8 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
                 return true;
 
             case android.R.id.home:
-             this.finish();
-             return true;
+                onBackPressed();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -199,7 +200,6 @@ public class BaseActivity extends AppCompatActivity implements SearchView.OnQuer
         searchView.clearFocus();
         return false;
     }
-
 
 
     protected boolean isAlwaysExpanded() {
