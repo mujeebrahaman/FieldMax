@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ColorPrimary">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_10dp"
+    android:paddingRight="@dimen/margin_10dp">
+    <TextView
+        android:id="@+id/customerStoreName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:singleLine="true"
+        android:paddingTop="@dimen/margin_5dp"
+        android:paddingBottom="@dimen/margin_5dp"
+        android:textSize="@dimen/textSize_18sp"
+        android:text="main text"
+        android:textColor="@color/textColorPrimary"
+        style="@style/DashBoardText"/>
+    <TextView
+        android:id="@+id/customerStoreAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_5dp"
+        android:paddingBottom="@dimen/margin_5dp"
+        android:textSize="12sp"
+        android:text="address text"
+        android:textColor="@color/gray69"
+        style="@style/DashBoardText"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+    <TextView
+        android:id="@+id/customerContactPersonName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.50"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:paddingTop="@dimen/margin_5dp"
+        android:paddingBottom="@dimen/margin_5dp"
+        android:textSize="14sp"
+        android:text="Contact Name.."
+        android:textColor="@color/textColorPrimary"
+        style="@style/DashBoardText"/>
+    <TextView
+        android:id="@+id/customerContactPersonNumber"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.50"
+        android:singleLine="true"
+        android:textSize="14sp"
+        android:paddingTop="@dimen/margin_5dp"
+        android:paddingBottom="@dimen/margin_5dp"
+        android:text="Contact Num.."
+        android:textColor="@color/textColorPrimary"
+        android:gravity="right"
+        style="@style/DashBoardText"/>
+    </LinearLayout>
+</LinearLayout>
+
+
+</LinearLayout>
