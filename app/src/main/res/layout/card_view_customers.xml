@@ -60,6 +60,7 @@
         android:textSize="14sp"
         android:paddingTop="@dimen/margin_5dp"
         android:paddingBottom="@dimen/margin_5dp"
+        android:drawableRight="@drawable/ic_call"
         android:text="Contact Num.."
         android:textColor="@color/textColorPrimary"
         android:gravity="right"
